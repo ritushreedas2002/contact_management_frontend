@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# 🚀 Contact Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+1. [Project Description](#project-description)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Setup Instructions](#setup-instructions)
+   - [Backend Setup](#backend-setup)
+   - [Frontend Setup](#frontend-setup)
+5. [Database Schema](#database-schema)
+6. [Challenges Faced](#challenges-faced)
+7. [Future Enhancements](#future-enhancements)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📖 Project Description
 
-### `npm start`
+This is a **Contact Management System** that allows users to:
+- Add, edit, and delete contacts.
+- View contact details in a paginated table.
+- Sort contacts by name (ascending/descending).
+- Validate contact details with both frontend and backend validation.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The app is built with a **React frontend** and a **Node.js/Express backend** using MongoDB for the database.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## 🎯 Features
+### Frontend:
+- Pagination, sorting functionality in the contact table.
+- Form validations for required fields and valid email/phone formats.
+- Error handling for backend responses.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Technologies Used
+### Frontend:
+- **React**: User interface library.
+- **Material-UI**: Styling and components library.
+- **Axios**: HTTP client for API requests.
 
-### `npm run build`
+## 🚧 Challenges Faced
+### Frontend:
+- **State Management**: Managing selectedContact state between components required careful synchronization.
+- **Form Validation**: Ensuring both frontend and backend validations aligned (e.g., email and phone number format).
+- **Pagination and Sorting**: Implementing dynamic sorting without affecting pagination required extra handling.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Resolution
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Centralized the `selectedContact` state** in the parent component (e.g., `App.js`) to manage the state and actions (edit and reset) globally.
+2. **Passed `setSelectedContact` and `selectedContact` as props** to both the `ContactForm` and `ContactsTable` components to ensure seamless updates.
+3. **Used conditional rendering (`isFormVisible`)** in the parent component to toggle the form's visibility.
 
-### `npm run eject`
+## SETUP
+1.Click on my deployed URL to get the frontend in working state
+```bash
+https://contact-management-frontend-wine.vercel.app/
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
